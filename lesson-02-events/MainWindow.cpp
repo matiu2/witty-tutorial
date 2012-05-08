@@ -17,9 +17,9 @@ MainWindow::MainWindow(Wt::WContainerWidget* parent) : Wt::WContainerWidget(pare
 }
 
 void MainWindow::sayHi() {
-    Wt::WString name = _nameInput->valueText();
-    if (name.empty())
+    _lastNameEntered = _nameInput->valueText();
+    if (_lastNameEntered.empty())
         _nameOutput->setText("");
     else
-        _nameOutput->setText("Hi there " + name);
+        _nameOutput->setText("Hi there " + _lastNameEntered);
 }
