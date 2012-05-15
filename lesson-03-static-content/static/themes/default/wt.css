@@ -982,3 +982,5 @@ body.Wt-rtl .Wt-treeview .Wt-noexpand {
 table.x-grid3-row-table {
     table-layout: fixed;
 }
+
+input { background-color: cyan; }

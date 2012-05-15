@@ -32,8 +32,7 @@ void MainWindow::toggleTheme() {
     std::string oldTheme = app->cssTheme();
     std::string newTheme = oldTheme == "default" ? "polished" : "default";
     app->setCssTheme(newTheme); // Toggle the theme between 'default' and 'polished'
-    _btnToggleTheme->setValueText("Change to " + oldTheme);
-    // TODO: find the DOM element like: <link xmlns="http://www.w3.org/1999/xhtml" href="?wtd=Dfwak5euA8lDBHZu&amp;request=style" rel="stylesheet" type="text/css" />
-    // and delete it, then re-add it with app->addStyleSheet() or just change the href to add ?update=now()
+    _btnToggleTheme->setText("Change to " + oldTheme);
+    // Make the client reload the css
     app->doJavaScript(app->javaScriptClass() + ".updateStyles()");
 }

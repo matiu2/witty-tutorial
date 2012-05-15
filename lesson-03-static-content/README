@@ -25,3 +25,17 @@ When developing and debugging, the app itself will serve these.
 In deployment it's common to have nginx or ha-proxy serve these for you.
 
 However, for myself I like to have this url be configurable, as I like to serve static files from a CDN in deployment. I use Rackspace Cloud Files, which includes use af the Akamai CDN, probably the biggest one in the world.
+
+========================================
+Contents
+========================================
+
+So here I've added a 'static' directory, and copied into it, all the stuff from the Wt source code's 'resources' directory here: https://github.com/kdeforche/wt/tree/master/resources
+
+It's a bunch of CSS and images that make things look good.
+
+One notable sub directory is the theme's directory, which in turn contains 'default' and 'polished'. We can set which theme to use in the application with:
+
+void Wt::WApplication::setCssTheme	(	const std::string & 	theme	)	
+
+We'd pass either "default" or "polished" in there.
