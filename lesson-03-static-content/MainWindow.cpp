@@ -5,6 +5,8 @@
 #include <Wt/WLabel>
 #include <Wt/WPushButton>
 #include <Wt/WString>
+#include <Wt/WLink>
+#include <Wt/WAnchor>
 #include <Wt/WApplication>
 
 MainWindow::MainWindow(Wt::WContainerWidget* parent) : Wt::WContainerWidget(parent) {
@@ -17,6 +19,7 @@ MainWindow::MainWindow(Wt::WContainerWidget* parent) : Wt::WContainerWidget(pare
     _btnHi->clicked().connect(this, &MainWindow::sayHi);
     _btnToggleTheme = new Wt::WPushButton("Change to polished", this);
     _btnToggleTheme->clicked().connect(this, &MainWindow::toggleTheme);
+    new Wt::WAnchor(Wt::WLink("/docs.html"), "Show Docs", this);
 }
 
 void MainWindow::sayHi() {
