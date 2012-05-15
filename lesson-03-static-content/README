@@ -1,0 +1,27 @@
+=================================
+Overview:
+=================================
+
+In this lesson we'll see what we need to serve static content.
+
+There are two directory related command line options that you pass to your app, which can be accessed from inside your app:
+
+  --docroot arg                 document root for static files, optionally 
+                                followed by a comma-separated list of paths 
+                                with static files (even if they are within a 
+                                deployment path), after a ';' 
+                                
+                                e.g. --docroot=".;/favicon.ico,/resources,/style"
+
+   --approot arg                application root for private support files; if 
+                                unspecified, the value of the environment 
+                                variable $WT_APP_ROOT is used, or else the 
+                                current working directory
+
+What I like to do is put the docroot in a separate subdirectory of the app dir, like /static.
+
+When developing and debugging, the app itself will serve these.
+
+In deployment it's common to have nginx or ha-proxy serve these for you.
+
+However, for myself I like to have this url be configurable, as I like to serve static files from a CDN in deployment. I use Rackspace Cloud Files, which includes use af the Akamai CDN, probably the biggest one in the world.
